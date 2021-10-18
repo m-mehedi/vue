@@ -5,23 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue3</title>
-    <script src="https://unpkg.com/vue@3.2.19"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .box{
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     
-    <div id="app">
-        <div v-show="showBooks">Currently showing books</div>
+    <div id="app" v-cloak>
+        <h1>Hello, <a style="color:orangered"> {{ fullName() }} </a></h1>
+        <hr/>
+        <h2><a :href="url">Visit site</a></h2>
+
+        <label> First Name </label>
+        <input type="text" v-model="fname"/>
+
+        <label> Last Name </label>
+        <input type="text" v-model="lname"/>
+
+        <!-- <div v-show="showBooks">Currently showing books</div>
         <div v-if="showBooks">
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
+            <h5><a v-bind:href="url">Google</a></h5>
             <p>The book name is <b>{{title}}</b> of volume {{age}}</p>
             <button v-on:click="age++">Age++</button>
             <div @click="title= 'Fallen paradise'">Change title</div>
             <div @click="changeTitle('New Title')">New</div>
         </div>
 
-        <button @click="toogleShowBooks">
+        <button v-bind:disabled="status" @click="toogleShowBooks">
             <span v-if="showBooks">Hide books</span>
             <span v-if="!showBooks">Hide books</span>
         </button>
+
+        <br>
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">Mouse Leave</div>
+        <div class="box" @dblclick="handleEvent">Double click</div>
+        <div class="box" @mousemove="handleMousemove">Position {{x}} {{y}}</div> -->
+
+        
     </div>
 </body>
 <script src="app.js"></script>
