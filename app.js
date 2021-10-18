@@ -3,11 +3,25 @@ const vm = Vue.createApp({
         return{
             fname: 'Mehedi',
             lname: 'Hasan',
-            url: 'https://pisslbd.com'
+            url: 'https://pisslbd.com',
+            raw_url: '<a href="https://pisslbd.com" target="_blank">PISSL</a>',
+            age: 20,
         }
     },
     methods: {
+        increment(){
+            this.age++
+        },
+        inputLastName(msg, event){
+            event.preventDefault();
+            console.log(msg);
+            this.lname = event.target.value
+        }
+    },
+    computed: {
+        
         fullName(){
+            console.log('Computed!');
             return `${this.fname} ${this.lname}`
         }
     }
