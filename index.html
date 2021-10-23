@@ -23,6 +23,18 @@
 <body>
     
     <div id="app" class="container" v-cloak>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" v-model="isPurple" >
+            <label class="form-check-label fw-bolder" for="flexSwitchCheckChecked"> <a style="color:rgb(92, 43, 226)"><b>Purple</b></a> </label>
+          </div>
+      
+        <div class="circle" :class="{ purple: isPurple }">
+        Hi!
+        </div>
+        <br/>
+        <br/>
+        <br/>
+
         <h1>Hello, <a style="color:orangered"> {{ fullName }} </a></h1>
         <hr/>
         <h2><a :href="url">Visit site</a></h2>

@@ -1,6 +1,8 @@
 const vm = Vue.createApp({
     data(){
         return{
+            isPurple: false,
+            fontWeight: "fw-bolder",
             fname: 'Mehedi',
             lname: 'Hasan',
             url: 'https://pisslbd.com',
@@ -23,6 +25,13 @@ const vm = Vue.createApp({
         fullName(){
             console.log('Computed!');
             return `${this.fname} ${this.lname}`
+        }
+    },
+    watch: {
+        age(newVal, oldVal){
+            setTimeout( () => {
+                this.age = 20
+            },3000);
         }
     }
 }).mount('#app')
