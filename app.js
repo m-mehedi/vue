@@ -2,6 +2,8 @@ const vm = Vue.createApp({
     data(){
         return{
             isPurple: false,
+            selectedColor: '',
+            size: 150,
             fontWeight: "fw-bolder",
             fname: 'Mehedi',
             lname: 'Hasan',
@@ -21,7 +23,9 @@ const vm = Vue.createApp({
         }
     },
     computed: {
-        
+        circle_classes(){
+            return { purple: this.isPurple }
+        },       
         fullName(){
             console.log('Computed!');
             return `${this.fname} ${this.lname}`
