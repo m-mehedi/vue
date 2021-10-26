@@ -23,6 +23,31 @@
 <body>
     
     <div id="app" class="container" v-cloak>
+        <ul>
+            <li v-for="(book, index) in books" :class="book">{{book}} - {{index + 1}}</li>
+        </ul>
+        <ul>
+        <li v-for="writers in writer">
+            <div v-for="(value, key, index) in writers">{{key}}: {{value}} - Index:{{index}}</div>
+        </li>
+        </ul>
+
+        <p v-if="mode == 1">Showing v-if directive content</p>
+        <template v-else-if="mode==2">
+            <p>Bonus content</p>
+            <h3>v-else-if</h3>
+        </template>
+        <p v-else>v-else</p>  
+
+        <h2 v-show="mode == 1">v-show</h2>
+
+
+        <select v-model="mode">
+            <option value="1">v-if</option>
+            <option value="2">v-else-if</option>
+            <option value="3">v-else</option>
+        </select> 
+
           <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" v-model="isPurple" >
             <label class="form-check-label fw-bolder" for="flexSwitchCheckChecked"> <a style="color:rgb(92, 43, 226)"><b>Purple</b></a> </label>

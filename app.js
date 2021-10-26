@@ -1,8 +1,15 @@
 const vm = Vue.createApp({
     data(){
         return{
+            books:['Book 1','Book 2', 'Book 3'],
+            writer:[
+                {name: 'People 1', age:20},
+                {name: 'People 2', age:21},
+                {name: 'People 3', age:22},
+            ],
             isPurple: false,
             selectedColor: '',
+            mode: 1,
             size: 150,
             fontWeight: "fw-bolder",
             fname: 'Mehedi',
